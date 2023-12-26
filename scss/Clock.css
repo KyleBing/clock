@@ -1,0 +1,207 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: inherit;
+  color: inherit;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "PingFang SC", "Microsoft Yahei UI", "Microsoft Yahei", "Helvetica", sans-serif;
+  width: 100%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+code,
+kbd,
+pre,
+samp,
+tt {
+  font-family: "Courier New", Courier, monospace;
+}
+
+:focus,
+:active {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  z-index: 50;
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  border-bottom: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #eee;
+  transition: all 0.2s;
+  height: 3px;
+}
+
+:hover::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  transition: all 0.2s;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-corner {
+  display: none;
+}
+
+.unselectable, .operations .operation-item {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn-like {
+  -webkit-transform: translateY(2px);
+  -moz-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  -o-transform: translateY(2px);
+  transform: translateY(2px);
+  cursor: pointer;
+}
+
+.clock {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  font-family: "JetBrains Mono";
+}
+.clock .time {
+  font-weight: bold;
+  font-size: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-flow: row nowrap;
+}
+.clock .time .second {
+  font-size: 60px;
+  padding-bottom: 50px;
+}
+.clock .separator {
+  padding: 0 30px;
+}
+.clock .date {
+  font-weight: 200;
+  font-size: 2rem;
+}
+
+.operations {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+.operations .operation-item {
+  text-align: center;
+  padding: 3px 20px;
+  -webkit-transform: translateY(2px);
+  -moz-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  -o-transform: translateY(2px);
+  transform: translateY(2px);
+  cursor: pointer;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+}
+.operations .operation-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #FF9500;
+}
+
+.help-info {
+  font-family: "JetBrains Mono";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.help-info .info {
+  font-size: 14px;
+  color: white;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+.help-info .info h3 {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.help-info .info dl {
+  padding: 5px 10px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+.help-info .info dl dt {
+  font-weight: bold;
+}
+.help-info .info dl dt .tip {
+  font-weight: normal;
+}
+.glass-blur {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+}
+
+.hide-pointer {
+  cursor: none;
+}

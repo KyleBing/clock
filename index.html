@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name='description' content="Clock 时钟">
+    <meta name='keywords' content="Clock 时钟">
+
+    <title>时钟</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo.png" type="image/png">
+    <link rel="stylesheet" href="scss/Clock.css?v=20231226091732">
+    <script src="../../lib/js/vue.min.2.6.10.js"></script>
+
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="app" v-cloak>
+    <div
+        :class="['clock', {'hide-pointer': !config.isShowToolPanel}]"
+        :style="`
+             height: ${height}px;
+             color: ${colors[config.colorIndex]}`"
+    >
+        <div class="time" :style="`font-size: ${config.fontSize}px`">
+            <div class="hour">{{ hours }}</div>
+            <div class="separator" :style="`padding: 0 ${config.fontSize * 0.1}px`">:</div>
+            <div class="minute">{{ minutes }}</div>
+            <div class="second"
+                 :style="`
+                     font-size: ${config.fontSize * 0.3}px;
+                     padding-bottom: ${config.fontSize * 0.2}px`"
+                 v-if="config.isShowSecond"
+            >
+                <span :style="`padding-left: ${config.fontSize * 0.05}px`">:</span>
+                {{ seconds }}</div>
+        </div>
+
+        <div class="date" v-if="config.isShowDate">
+            {{ year }}年{{ date }} {{ weekday }} {{ timeLabel }}
+        </div>
+
+        <div class="operations" v-if="config.isShowToolPanel">
+            <div class="operation-item" @click="switchColor">颜色</div>
+            <div class="operation-item" @click="switchFullScreen">全屏</div>
+            <div class="operation-item" @click="toggleSecond">秒数</div>
+            <div class="operation-item" @click="toggleDate">日期</div>
+            <div class="operation-item" @click="fontSizeUp">↑</div>
+            <div class="operation-item" @click="fontSizeDown">↓</div>
+            <div class="operation-item" @click="showHelpInfo">帮助</div>
+        </div>
+    </div>
+
+    <div class="help-info" @click="isShowHelp = !isShowHelp" v-if="isShowHelp">
+        <div class="info">
+            <h3>快捷键</h3>
+            <dl><dt>H - <span class="tip">Hide</span></dt><dd>操作面板 显示/隐藏</dd></dl>
+            <dl><dt>↑</dt><dd>字体 +</dd></dl>
+            <dl><dt>↓</dt><dd>字体 -</dd></dl>
+
+            <dl><dt>C - <span class="tip">Color</span></dt><dd>颜色变换</dd></dl>
+            <dl><dt>D - <span class="tip">Date</span></dt><dd>日期 显示/隐藏</dd></dl>
+            <dl><dt>S - <span class="tip">Second</span></dt><dd>秒数 显示/隐藏</dd></dl>
+            <dl><dt>G - <span class="tip">Glass</span></dt><dd>玻璃遮罩 显示/隐藏</dd></dl>
+            <dl><dt>←</dt><dd>毛玻璃效果减小</dd></dl>
+            <dl><dt>→</dt><dd>毛玻璃效果增大</dd></dl>
+            <dl><dt>F - <span class="tip">FullScreen</span></dt><dd>全屏切换</dd></dl>
+
+        </div>
+    </div>
+
+    <div class="glass-blur"
+         v-show="config.isShowGlassBlur"
+         :style="`backdrop-filter: blur(${config.blur}px) saturate(180%) !important;-webkit-backdrop-filter: blur(${config.blur})px saturate(180%)!important; cursor: none`"
+    />
+
+</div>
+
+<script src="js/Clock.js?v=20231226091732"></script>
+
+
+</body>
+</html>
