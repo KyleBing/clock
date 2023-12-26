@@ -1,6 +1,12 @@
 # 时钟 Clock （WEB）
 
-![full screen clock](https://github.com/KyleBing/clock/assets/12215982/3bce1495-376b-42da-af98-62fc29e2a282)
+
+![2023-12-26 09 54 33](https://github.com/KyleBing/clock/assets/12215982/9312b562-b368-427b-8aa7-03eb1916913b)
+
+## 地址
+
+[https://kylebing.cn/tools/clock/](https://kylebing.cn/tools/clock/)
+
 
 ## 快捷键
 
